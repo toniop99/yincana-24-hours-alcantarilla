@@ -19,13 +19,15 @@ class User implements Authenticatable
     public string $email;
     public string $name;
     public string $password;
+    public bool  $basesAccepted;
 
-    public function __construct(string $id, string $email, string $name, string $password)
+    public function __construct(string $id, string $email, string $name, string $password, bool $bassesAccepted)
     {
         $this->id = $id;
         $this->email = $email;
         $this->name = $name;
         $this->password = $password;
+        $this->basesAccepted = $bassesAccepted;
     }
 
     public function getAuthIdentifierName(): string

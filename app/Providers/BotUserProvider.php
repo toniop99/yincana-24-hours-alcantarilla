@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Services\BotApiService;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\UserProvider;
+use Illuminate\Validation\ValidationException;
 
 class BotUserProvider implements UserProvider
 {
@@ -21,7 +22,7 @@ class BotUserProvider implements UserProvider
         $data = $this->botApiService->getUserById($identifier);
         $username = $data['telegram_username'] ?: $data['email'];
 
-        return new User($data['id'], $data['email'], $username, $data['pin']);
+        return new User($data['id'], $data['email'], $username, $data['pin'], $data['basesAccepted']);
 
     }
 
@@ -30,13 +31,24 @@ class BotUserProvider implements UserProvider
         if (empty($credentials)) {
             return null;
         }
+
         $data = $this->botApiService->getUserByEmail($credentials['email']);
+
         $username = $data['telegram_username'] ?: $data['email'];
-        return new User($data['id'], $data['email'], $username, $data['pin']);
+        return new User($data['id'], $data['email'], $username, $data['pin'], $data['basesAccepted']);
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function validateCredentials(Authenticatable $user, array $credentials): bool
     {
+        if(!$user->basesAccepted) {
+            throw ValidationException::withMessages([
+                'error' => 'Debes aceptar las bases del concurso en Telegram con el comando /participate',
+            ]);
+        }
+
         return ($credentials['email'] == $user->email &&
             ($credentials['password']) == $user->getAuthPassword());
     }

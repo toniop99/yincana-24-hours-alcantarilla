@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name', 'Yincana Halloween 2021') }}</title>
+        <link rel="icon" href="{{url('img/logo.png')}}">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +27,15 @@
             @if (Route::has('login'))
                 <div class="absolute top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-lg text-white dark:text-white underline">@lang('general.dashboard')</a>
+                        <a href="{{ url('/dashboard') }}" class="text-lg text-white dark:text-white underline mr-2">@lang('general.dashboard')</a>
+
+                        <a href="{{ route('logout') }}" class="text-lg text-white dark:text-white underline ml-2" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Cerrar Sesión
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @else
                         <a href="{{ route('login') }}" class="text-lg text-white dark:text-white underline">@lang('general.log-in')</a>
                     @endauth
