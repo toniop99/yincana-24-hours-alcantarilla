@@ -15,6 +15,7 @@ class QuizSeeder extends Seeder
     public function run()
     {
         Quiz::create([
+            'code' => 'fotaka-alcantarilla-f135-4eec-8423-c964cfaf10da',
             'question_number' => 'q1',
             'store' => 'Fotaka Alcantarilla',
             'map_url' => 'https://goo.gl/maps/UKLD8dFNFAX5bAsJ8',
@@ -27,6 +28,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'basica-ferreteria-servicios-b3cc-40ed-8fde-95b7a1c5a09b',
             'question_number' => 'q2',
             'store' => 'Básica Ferretería y Servicios',
             'map_url' => 'https://g.page/FerreteriaBasica?share',
@@ -39,6 +41,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'kris-moda-intima-ba78-48f4-acf3-26709bf74c23',
             'question_number' => 'q3',
             'store' => 'Kris\'S Moda Íntima',
             'map_url' => 'https://goo.gl/maps/K3cQi7Py1Z5Qstyq7',
@@ -51,6 +54,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'sanz-zapatos-0569-4375-8eb7-af5913c2bc5a',
             'question_number' => 'q4',
             'store' => 'Sanz Zapatos',
             'map_url' => 'https://goo.gl/maps/1WcnuXZ1AshpWF9A8',
@@ -63,6 +67,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'centro-estetica-caresse-bfa6-4118-9a0c-23b6132a37d5',
             'question_number' => 'q5',
             'store' => 'Centro de Estética Caresse',
             'map_url' => 'https://goo.gl/maps/5nEs1gUfyJ2WV7B47',
@@ -75,6 +80,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'mariano-cano-0950-4781-a89f-287c3a234f60',
             'question_number' => 'q6',
             'store' => 'Mariano Cano',
             'map_url' => 'https://goo.gl/maps/qNWHeP8iCKVvX2T67',
@@ -87,6 +93,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'veronica-ballester-f81a-4c49-87fa-668d8ca484a4',
             'question_number' => 'q7',
             'store' => 'Verónica Ballesta Láser y Estética',
             'map_url' => 'https://www.facebook.com/veronicaballestalaseryestetica/',
@@ -99,6 +106,7 @@ class QuizSeeder extends Seeder
         ]);
 
         Quiz::create([
+            'code' => 'audio-optica-caride-112c-40b5-af2c-8ae151432180',
             'question_number' => 'q8',
             'store' => 'Audio Óptica Caride',
             'map_url' => 'https://g.page/opticacaride?share',

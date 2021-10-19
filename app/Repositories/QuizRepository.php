@@ -25,4 +25,12 @@ final class QuizRepository
         return $query->get()->first();
     }
 
+    public function findByCode(string $code) {
+        $query = $this->model::query();
+
+        $query->where('code', $code);
+
+        return $query->get()->first();
+    }
+
 }

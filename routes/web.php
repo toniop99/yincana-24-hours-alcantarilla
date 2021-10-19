@@ -20,12 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/ids', function (QuizService $quizService) {
-    return response()->json($quizService->allIds());
+Route::get('/codes', function (QuizService $quizService) {
+    return response()->json($quizService->allCodes());
 });
 
-Route::get('/quiz/{id}', [QuizController::class, 'loadQuestion'])->middleware('auth')->name('quiz');
-Route::post('/quiz/{id}', [QuizController::class, 'validateAnswer'])->middleware('auth');
+Route::get('/quiz/{code}', [QuizController::class, 'loadQuestion'])->middleware('auth')->name('quiz');
+Route::post('/quiz/{code}', [QuizController::class, 'validateAnswer'])->middleware('auth');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 

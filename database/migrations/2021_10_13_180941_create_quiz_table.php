@@ -15,6 +15,7 @@ class CreateQuizTable extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('code')->unique();
             $table->string('question_number');
             $table->string('store');
             $table->string('map_url');

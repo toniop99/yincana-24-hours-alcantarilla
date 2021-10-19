@@ -19,8 +19,8 @@ class QuizController extends Controller
         $this->botApiService = $botApiService;
     }
 
-    public function loadQuestion(string $id) {
-        $quizQuestion = $this->quizService->findById($id);
+    public function loadQuestion(string $code) {
+        $quizQuestion = $this->quizService->findByCode($code);
         $userQuiz = $this->botApiService->getUserQuiz(Auth::user()->id);
 
         if(!$quizQuestion) {
@@ -41,8 +41,8 @@ class QuizController extends Controller
         return view('quiz.question', ['question' => $quizQuestion]);
     }
 
-    public function validateAnswer(string $id, Request $request) {
-        $quizQuestion = $this->quizService->findById($id);
+    public function validateAnswer(string $code, Request $request) {
+        $quizQuestion = $this->quizService->findByCode($code);
         $userQuiz = $this->botApiService->getUserQuiz(Auth::user()->id);
         $questions = $this->quizService->all();
 

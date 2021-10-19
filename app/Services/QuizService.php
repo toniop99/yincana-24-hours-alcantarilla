@@ -31,8 +31,24 @@ class QuizService
         return $return;
     }
 
+    public function allCodes(): array
+    {
+        $questions = $this->all();
+        $return = [];
+
+        foreach ($questions as $question) {
+            $return[] = $question->code;
+        }
+
+        return $return;
+    }
+
     public function findById(string $id) {
         return $this->repository->findById($id);
+    }
+
+    public function findByCode(string $code) {
+        return $this->repository->findByCode($code);
     }
 
     public function parseProfileData(array $userQuiz, $questions): array

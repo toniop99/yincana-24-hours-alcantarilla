@@ -12,7 +12,7 @@
                     {{--                    Header with question--}}
                     <h1>{{$question->question}}</h1>
                     <div class="p-6 bg-white border-b border-gray-200">
-                        <form method="POST" action="{{route('quiz', ["id" => $question->id])}}">
+                        <form method="POST" action="{{route('quiz', ["code" => $question->code])}}">
                             @csrf
 
                             <input type="radio" value="{{$question->answer_1}}" name="answer" id="option-1" required checked>
