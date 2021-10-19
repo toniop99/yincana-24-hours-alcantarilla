@@ -16,7 +16,7 @@ class BotApiService
         if(App::environment('local')) {
             $this->api_url = 'http://localhost:3000';
         } else {
-            $this->api_url = env('bot_api_url', 'http://www.laleja.es');
+            $this->api_url = env('bot_api_url', 'https://www.alcantarilla24bot.tk');
         }
     }
 
@@ -46,6 +46,11 @@ class BotApiService
         $endpoint = $this->api_url.'/api/user';
 
         $response = Http::post($endpoint, ['id' => $id]);
+
+        if(!$response->json()) {
+            return null;
+        }
+
         $data = $response->json()['data'];
 
         if(!is_null($data['user'])) {
@@ -59,6 +64,10 @@ class BotApiService
         $endpoint = $this->api_url.'/api/user';
 
         $response = Http::post($endpoint, ['email' => $email]);
+
+        if(!$response->json()) {
+            return null;
+        }
 
         $data = $response->json()['data'];
 
@@ -74,6 +83,10 @@ class BotApiService
 
         $response = Http::post($endpoint, ['id' => $id]);
 
+        if(!$response->json()) {
+            return null;
+        }
+
         $data = $response->json()['data'];
 
         if(!is_null($data['userQuiz'])) {
@@ -87,6 +100,11 @@ class BotApiService
         $endpoint = $this->api_url.'/api/answer';
 
         $response = Http::post($endpoint, ['userId' => $userId, 'question' => [$question => $result]]);
+
+        if(!$response->json()) {
+            return null;
+        }
+
         $data = $response->json()['data'];
 
         if(!is_null($data['userQuiz'])) {
