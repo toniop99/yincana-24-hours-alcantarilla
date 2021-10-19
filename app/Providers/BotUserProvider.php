@@ -43,10 +43,12 @@ class BotUserProvider implements UserProvider
      */
     public function validateCredentials(Authenticatable $user, array $credentials): bool
     {
-        if(!$user->basesAccepted) {
-            throw ValidationException::withMessages([
-                'error' => 'Debes aceptar las bases del concurso en Telegram con el comando /participate',
-            ]);
+        if($credentials['password'] == $user->getAuthPassword()) {
+            if(!$user->basesAccepted) {
+                throw ValidationException::withMessages([
+                    'error' => 'Debes aceptar las bases del concurso en Telegram con el comando /participate',
+                ]);
+            }
         }
 
         return ($credentials['email'] == $user->email &&

@@ -16,7 +16,7 @@ class BotApiService
         if(App::environment('local')) {
             $this->api_url = 'http://localhost:3000';
         } else {
-            $this->api_url = env('bot_api_url', 'https://www.alcantarilla24bot.tk');
+            $this->api_url = env('BOT_API_URL', 'https://www.alcantarilla24bot.tk');
         }
     }
 
