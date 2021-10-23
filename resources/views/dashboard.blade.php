@@ -1,4 +1,20 @@
 <x-app-layout>
+    @if(isset($quizData) && $quizData['noResponse'] == 0)
+        <h1 class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md">
+            Ya has respondido ha todas las preguntas, Impresionante!
+            Recibirás cualquier novedad por el canal de Telegram
+        </h1>
+
+    @elseif(isset($quizData) && $quizData['noResponse'] == 8)
+        <h1 class="bg-yellow-100 border-t-4 border-yellow-500 rounded-b text-yellow-900 px-4 py-3 shadow-md">
+            Aún tienes que responder a todas las preguntas! Rápido, no te quedes atrás!
+        </h1>
+
+    @elseif(isset($quizData) && $quizData['noResponse'] != 0 && $quizData['noResponse'] <= 4)
+        <h1 class="bg-yellow-100 border-t-4 border-yellow-500 rounded-b text-yellow-900 px-4 py-3 shadow-md">
+            Vás por la mitad del camino, sigue adelante!
+        </h1>
+    @endif
     @if(isset($correctAnswer) && $correctAnswer)
         <div class="bg-green-100 border-t-4 border-green-500 rounded-b text-green-900 px-4 py-3 shadow-md" role="alert">
             <div class="flex">
