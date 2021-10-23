@@ -17,15 +17,26 @@ class BotUserProvider implements UserProvider
         $this->botApiService = $botApiService;
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function retrieveById($identifier): ?User
     {
         $data = $this->botApiService->getUserById($identifier);
+        if(!$data) {
+            throw ValidationException::withMessages([
+                'error' => 'Hubo un error al intentar iniciar sesión',
+            ]);
+        }
         $username = $data['telegram_username'] ?: $data['email'];
 
         return new User($data['id'], $data['email'], $username, $data['pin'], $data['basesAccepted']);
 
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function retrieveByCredentials(array $credentials): ?User
     {
         if (empty($credentials)) {
@@ -33,6 +44,11 @@ class BotUserProvider implements UserProvider
         }
 
         $data = $this->botApiService->getUserByEmail($credentials['email']);
+        if(!$data) {
+            throw ValidationException::withMessages([
+                'error' => 'Hubo un error al intentar iniciar sesión',
+            ]);
+        }
 
         $username = $data['telegram_username'] ?: $data['email'];
         return new User($data['id'], $data['email'], $username, $data['pin'], $data['basesAccepted']);
