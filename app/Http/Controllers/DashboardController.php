@@ -30,7 +30,6 @@ class DashboardController extends Controller
         }
 
         $response = $this->quizService->parseProfileData($userQuiz, $questions);
-
         return view('dashboard', ['quizData' => $response]);
     }
 }
