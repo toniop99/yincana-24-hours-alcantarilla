@@ -20,10 +20,10 @@ class QuizSeeder extends Seeder
             'store' => 'Fotaka Alcantarilla',
             'map_url' => 'https://goo.gl/maps/UKLD8dFNFAX5bAsJ8',
             'title' => 'Pregunta Fotaka Alcantarilla',
-            'question' => '¿Cuántos minutos tiene una día?',
-            'answer_1' => '1440',
-            'answer_2' => '1250',
-            'answer_3' => '560',
+            'question' => '¿Cuántos fantasmas blancos hay encima de la maleta?',
+            'answer_1' => '3',
+            'answer_2' => '6',
+            'answer_3' => '9',
             'correct_answer' => 'answer_1',
         ]);
 
@@ -33,10 +33,10 @@ class QuizSeeder extends Seeder
             'store' => 'Básica Ferretería y Servicios',
             'map_url' => 'https://g.page/FerreteriaBasica?share',
             'title' => 'Pregunta Básica Ferretería y Servicios',
-            'question' => '¿Cuál es el río más caudaloso del mundo?',
-            'answer_1' => 'Amazonas',
-            'answer_2' => 'Sena',
-            'answer_3' => 'Guadalquivir',
+            'question' => '¿Cuántos cuervos han robado una llave de ferretería Básica?',
+            'answer_1' => '4',
+            'answer_2' => '6',
+            'answer_3' => '9',
             'correct_answer' => 'answer_1',
         ]);
 
@@ -46,11 +46,11 @@ class QuizSeeder extends Seeder
             'store' => 'Kris\'S Moda Íntima',
             'map_url' => 'https://goo.gl/maps/K3cQi7Py1Z5Qstyq7',
             'title' => 'Pregunta Kris\'S Moda Íntima',
-            'question' => '¿Cuántos meses tienen 28 días?',
-            'answer_1' => '12',
-            'answer_2' => '1',
-            'answer_3' => '2',
-            'correct_answer' => 'answer_1',
+            'question' => 'Cuenta cuenta y sabrás, ¿cuántos leggings hay en este lugar?',
+            'answer_1' => '5',
+            'answer_2' => '9',
+            'answer_3' => '14',
+            'correct_answer' => 'answer_3',
         ]);
 
         Quiz::create([
@@ -59,11 +59,11 @@ class QuizSeeder extends Seeder
             'store' => 'Sanz Zapatos',
             'map_url' => 'https://goo.gl/maps/1WcnuXZ1AshpWF9A8',
             'title' => 'Pregunta Sanz Zapatos',
-            'question' => '¿Qué planeta es el más cercano al Sol?',
-            'answer_1' => 'Marte',
-            'answer_2' => 'Júpiter',
-            'answer_3' => 'Mercurio',
-            'correct_answer' => 'answer_3',
+            'question' => '¿cuántas brujas hay en este escaparate?',
+            'answer_1' => '1',
+            'answer_2' => '3',
+            'answer_3' => '7',
+            'correct_answer' => 'answer_2',
         ]);
 
         Quiz::create([
@@ -72,11 +72,11 @@ class QuizSeeder extends Seeder
             'store' => 'Centro de Estética Caresse',
             'map_url' => 'https://goo.gl/maps/5nEs1gUfyJ2WV7B47',
             'title' => 'Pregunta Centro de Estética Caresse',
-            'question' => '¿Que nombre tiene el sonido que hace una oveja?',
-            'answer_1' => 'balido',
-            'answer_2' => 'ronroneo',
-            'answer_3' => 'maullido',
-            'correct_answer' => 'answer_1',
+            'question' => '¿Cuántos gorros de brujas vuelan en el escaparate?',
+            'answer_1' => '1',
+            'answer_2' => '2',
+            'answer_3' => '3',
+            'correct_answer' => 'answer_3',
         ]);
 
         Quiz::create([
@@ -85,11 +85,11 @@ class QuizSeeder extends Seeder
             'store' => 'Mariano Cano',
             'map_url' => 'https://goo.gl/maps/qNWHeP8iCKVvX2T67',
             'title' => 'Pregunta Mariano Cano',
-            'question' => '¿En qué ciudad se encuentra la Torre Eiffel?',
-            'answer_1' => 'Roma',
-            'answer_2' => 'París',
-            'answer_3' => 'Londres',
-            'correct_answer' => 'answer_2',
+            'question' => '¿cuántas patas tienen las arañas terroríficas del escaparate?',
+            'answer_1' => '3',
+            'answer_2' => '5',
+            'answer_3' => '8',
+            'correct_answer' => 'answer_3',
         ]);
 
         Quiz::create([
@@ -98,11 +98,11 @@ class QuizSeeder extends Seeder
             'store' => 'Verónica Ballesta Láser y Estética',
             'map_url' => 'https://www.facebook.com/veronicaballestalaseryestetica/',
             'title' => 'Pregunta Verónica Ballesta Láser y Estética',
-            'question' => '¿Qué tipo de palabra es “aquí”?',
-            'answer_1' => 'adverbio',
-            'answer_2' => 'pronombre',
-            'answer_3' => 'verbo',
-            'correct_answer' => 'answer_1',
+            'question' => '¿Cuántas momias hay en el escaparate?',
+            'answer_1' => '0',
+            'answer_2' => '1',
+            'answer_3' => '2',
+            'correct_answer' => 'answer_2',
         ]);
 
         Quiz::create([
@@ -111,11 +111,11 @@ class QuizSeeder extends Seeder
             'store' => 'Audio Óptica Caride',
             'map_url' => 'https://g.page/opticacaride?share',
             'title' => 'Pregunta Audio Óptica Caride',
-            'question' => '¿Cuándo termina la Edad Antigua?',
-            'answer_1' => 'V a.C.',
-            'answer_2' => 'IIV d.C.',
-            'answer_3' => 'V d.C.',
-            'correct_answer' => 'answer_3',
+            'question' => '¿Cuántas manos ensangrentadas hay en el escaparate?',
+            'answer_1' => '1',
+            'answer_2' => '6',
+            'answer_3' => '9',
+            'correct_answer' => 'answer_2',
         ]);
     }
 }
